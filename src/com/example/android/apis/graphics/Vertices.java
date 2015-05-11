@@ -17,7 +17,6 @@
 package com.example.android.apis.graphics;
 
 import com.example.android.apis.R;
-import com.example.android.apis.utils.Utils;
 
 import android.content.Context;
 import android.graphics.*;
@@ -25,14 +24,7 @@ import android.os.Bundle;
 import android.view.*;
 
 public class Vertices extends GraphicsActivity {
-	private static final boolean DEBUG = true;
-	private static final String TAG = "Vertices";
-	
-	private static void debug(String msg){
-		if(DEBUG) android.util.Log.v(TAG, msg);
-	}
-	
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,23 +63,16 @@ public class Vertices extends GraphicsActivity {
             setXY(mTexs, 2, w, 0);
             setXY(mTexs, 3, w, h);
             setXY(mTexs, 4, 0, h);
-            
-            debug("The mTexs is " + Utils.getString(mTexs));
 
             setXY(mVerts, 0, w/2, h/2);
             setXY(mVerts, 1, 0, 0);
             setXY(mVerts, 2, w, 0);
             setXY(mVerts, 3, w, h);
             setXY(mVerts, 4, 0, h);
-            
-            debug("The mVerts is " + Utils.getString(mVerts));
 
             mMatrix.setScale(0.8f, 0.8f);
             mMatrix.preTranslate(20, 20);
-            debug("The old mMatrix is " + mMatrix);
             mMatrix.invert(mInverse);
-            debug("The new mMatrix is " + mMatrix);
-            debug("The mInverse is " + mInverse);
         }
 
         @Override protected void onDraw(Canvas canvas) {
@@ -107,10 +92,7 @@ public class Vertices extends GraphicsActivity {
 
         @Override public boolean onTouchEvent(MotionEvent event) {
             float[] pt = { event.getX(), event.getY() };
-            debug("onTouchEvent old pt[0] is " + pt[0] + " pt[1] is " + pt[1]);
-            //mapPoints
             mInverse.mapPoints(pt);
-            debug("onTouchEvent new pt[0] is " + pt[0] + " pt[1] is " + pt[1]);
             setXY(mVerts, 0, pt[0], pt[1]);
             invalidate();
             return true;

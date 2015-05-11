@@ -19,21 +19,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ProgressBar android:id="@+android:id/progress_large"
+    <!-- android:id="@android:id/progress_large" -->
+    <ProgressBar 
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <ProgressBar android:id="@+android:id/progress"
+    <ProgressBar android:id="@android:id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <ProgressBar android:id="@+android:id/progress_small"
+    <!-- android:id="@android:id/progress_small" -->
+    <ProgressBar 
         style="?android:attr/progressBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <ProgressBar android:id="@+android:id/progress_small_title"
+    <!-- android:id="@android:id/progress_small_title" -->
+    <ProgressBar 
         style="?android:attr/progressBarStyleSmallTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
